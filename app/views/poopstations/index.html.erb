@@ -1,0 +1,29 @@
+<h1>Listing poopstations</h1>
+
+<table>
+  <tr>
+    <th>Sticker type</th>
+    <th>Gender</th>
+    <th>Stalltalkian</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @poopstations.each do |poopstation| %>
+  <tr>
+    <td><%= poopstation.sticker_type %></td>
+    <td><%= poopstation.gender %></td>
+    <td><%= poopstation.stalltalkian_id %></td>
+    <td><%= poopstation.location_id %></td>
+    <td><%= link_to 'Show', poopstation %></td>
+    <td><%= link_to 'Edit', edit_poopstation_path(poopstation) %></td>
+    <td><%= link_to 'Destroy', poopstation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Poopstation', new_poopstation_path %>

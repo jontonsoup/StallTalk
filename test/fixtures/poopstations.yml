@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sticker_type: MyString
+  gender: MyString
+  stalltalkian_id: 1
+  location_id: 1
+
+two:
+  sticker_type: MyString
+  gender: MyString
+  stalltalkian_id: 1
+  location_id: 1

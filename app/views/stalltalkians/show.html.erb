@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @stalltalkian.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @stalltalkian.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @stalltalkian.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_stalltalkian_path(@stalltalkian) %> |
+<%= link_to 'Back', stalltalkians_path %>

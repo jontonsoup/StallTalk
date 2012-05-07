@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sticker type:</b>
+  <%= @poopstation.sticker_type %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @poopstation.gender %>
+</p>
+
+<p>
+  <b>Stalltalkian:</b>
+  <%= @poopstation.stalltalkian_id %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @poopstation.location_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_poopstation_path(@poopstation) %> |
+<%= link_to 'Back', poopstations_path %>

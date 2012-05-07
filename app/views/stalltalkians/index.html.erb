@@ -1,0 +1,27 @@
+<h1>Listing stalltalkians</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stalltalkians.each do |stalltalkian| %>
+  <tr>
+    <td><%= stalltalkian.name %></td>
+    <td><%= stalltalkian.email %></td>
+    <td><%= stalltalkian.password %></td>
+    <td><%= link_to 'Show', stalltalkian %></td>
+    <td><%= link_to 'Edit', edit_stalltalkian_path(stalltalkian) %></td>
+    <td><%= link_to 'Destroy', stalltalkian, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stalltalkian', new_stalltalkian_path %>

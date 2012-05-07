@@ -1,0 +1,33 @@
+<%= form_for(@poopstation) do |f| %>
+  <% if @poopstation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@poopstation.errors.count, "error") %> prohibited this poopstation from being saved:</h2>
+
+      <ul>
+      <% @poopstation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sticker_type %><br />
+    <%= f.text_field :sticker_type %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :stalltalkian_id %><br />
+    <%= f.number_field :stalltalkian_id %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br />
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

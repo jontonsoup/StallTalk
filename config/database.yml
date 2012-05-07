@@ -18,7 +18,7 @@ development:
   database: stalltalk_development
   pool: 5
   username: stalltalk
-  password:
+  password: northwestern2013
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -44,7 +44,7 @@ test:
   database: stalltalk_test
   pool: 5
   username: stalltalk
-  password:
+  password: northwestern2013
 
 production:
   adapter: postgresql
@@ -52,4 +52,4 @@ production:
   database: stalltalk_production
   pool: 5
   username: stalltalk
-  password:
+  password: northwestern2013
