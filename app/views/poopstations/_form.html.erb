@@ -1,33 +1,32 @@
-<%= form_for(@poopstation) do |f| %>
-  <% if @poopstation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@poopstation.errors.count, "error") %> prohibited this poopstation from being saved:</h2>
-
-      <ul>
-      <% @poopstation.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @poopstation, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :sticker_type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sticker_type, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :gender, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :gender, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :stalltalkian_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :stalltalkian_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :location_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :location_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :sticker_type %><br />
-    <%= f.text_field :sticker_type %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :stalltalkian_id %><br />
-    <%= f.number_field :stalltalkian_id %>
-  </div>
-  <div class="field">
-    <%= f.label :location_id %><br />
-    <%= f.number_field :location_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                poopstations_path, :class => 'btn' %>
   </div>
 <% end %>

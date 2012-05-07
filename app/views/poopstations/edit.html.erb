@@ -1,6 +1,4 @@
-<h1>Editing poopstation</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @poopstation %> |
-<%= link_to 'Back', poopstations_path %>
+<%- model_class = @poopstation.class -%>
+<h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
+                                 :default => "Edit #{model_class.model_name.human}") %></h1>
+<%= render :partial => 'form' %>
