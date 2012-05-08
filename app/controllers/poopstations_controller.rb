@@ -7,17 +7,19 @@ class PoopstationsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @poopstations }
+      format.mobile
     end
   end
 
   # GET /poopstations/1
   # GET /poopstations/1.json
   def show
-    @poopstation = Poopstation.find(params[:id])
+    @poopstation = Poopstation.find_or_create_by_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @poopstation }
+      format.mobile
     end
   end
 
@@ -29,6 +31,7 @@ class PoopstationsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @poopstation }
+      format.mobile
     end
   end
 
@@ -46,8 +49,10 @@ class PoopstationsController < ApplicationController
       if @poopstation.save
         format.html { redirect_to @poopstation, notice: 'Poopstation was successfully created.' }
         format.json { render json: @poopstation, status: :created, location: @poopstation }
+        format.mobile { redirect_to @poopstation }
       else
         format.html { render action: "new" }
+        format.mobile { render action: "new" }
         format.json { render json: @poopstation.errors, status: :unprocessable_entity }
       end
     end
@@ -62,8 +67,10 @@ class PoopstationsController < ApplicationController
       if @poopstation.update_attributes(params[:poopstation])
         format.html { redirect_to @poopstation, notice: 'Poopstation was successfully updated.' }
         format.json { head :no_content }
+        format.mobile { redirect_to @poopstation }
       else
         format.html { render action: "edit" }
+        format.mobile { render action: "edit" }
         format.json { render json: @poopstation.errors, status: :unprocessable_entity }
       end
     end
@@ -77,6 +84,7 @@ class PoopstationsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to poopstations_url }
+      format.mobile { redirect_to poopstations_url }
       format.json { head :no_content }
     end
   end
