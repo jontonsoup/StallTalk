@@ -10,6 +10,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'mobile-fu', :git => 'git://github.com/benlangfeld/mobile-fu.git'
 gem 'thin'
 gem 'jquery_mobile_rails'
+gem 'bcrypt-ruby'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,6 +21,19 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :development do
+  #comment/uncomment next 3 lines for ruby-debug
+  gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
+  gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
+  gem 'ruby-debug19'
+  #
+  ##### run this to get this working: bundle config build.ruby-debug-base19 --with-ruby-include=$rvm_path/src/ruby-1.9.3-p0/
+  #
+  #gem 'ruby-debug19'
+  #gem 'ruby-debug-base19', :git => 'https://github.com/tribune/ruby-debug-base19.git'
+  #gem 'linecache19', :git => 'git@github.com:chuckg/linecache19.git', :branch => "0_5_13/dependencies"
 end
 
 gem 'jquery-rails'

@@ -1,4 +1,5 @@
 class StalltalkiansController < ApplicationController
+  include BCrypt
   # GET /stalltalkians
   # GET /stalltalkians.json
   def index
@@ -7,6 +8,7 @@ class StalltalkiansController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @stalltalkians }
+      format.mobile
     end
   end
 
@@ -18,6 +20,7 @@ class StalltalkiansController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @stalltalkian }
+      format.mobile
     end
   end
 
@@ -29,6 +32,7 @@ class StalltalkiansController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @stalltalkian }
+      format.mobile
     end
   end
 
@@ -40,14 +44,18 @@ class StalltalkiansController < ApplicationController
   # POST /stalltalkians
   # POST /stalltalkians.json
   def create
+    params[:stalltalkian][:password] = Stalltalkian.hash_password(params[:stalltalkian][:password])
+    debugger
     @stalltalkian = Stalltalkian.new(params[:stalltalkian])
-
+    debugger
     respond_to do |format|
       if @stalltalkian.save
         format.html { redirect_to @stalltalkian, notice: 'Stalltalkian was successfully created.' }
+        format.mobile { redirect_to @stalltalkian, notice: 'Stalltalkian was successfully created.' }
         format.json { render json: @stalltalkian, status: :created, location: @stalltalkian }
       else
         format.html { render action: "new" }
+        format.mobile { render action: "new" }
         format.json { render json: @stalltalkian.errors, status: :unprocessable_entity }
       end
     end
@@ -61,9 +69,11 @@ class StalltalkiansController < ApplicationController
     respond_to do |format|
       if @stalltalkian.update_attributes(params[:stalltalkian])
         format.html { redirect_to @stalltalkian, notice: 'Stalltalkian was successfully updated.' }
+        format.mobile { redirect_to @stalltalkian, notice: 'Stalltalkian was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
+        format.mobile { render action: "edit" }
         format.json { render json: @stalltalkian.errors, status: :unprocessable_entity }
       end
     end
@@ -77,6 +87,7 @@ class StalltalkiansController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to stalltalkians_url }
+      format.mobile { redirect_to stalltalkians_url }
       format.json { head :no_content }
     end
   end
