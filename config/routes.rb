@@ -1,5 +1,5 @@
 Stalltalk::Application.routes.draw do
-   root :to => 'poopstations#index'
+   root :to => 'home#index'
 
   resources :stalltalkians
 
