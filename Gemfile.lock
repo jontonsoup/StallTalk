@@ -23,6 +23,13 @@ GIT
       railties (>= 3.1)
       therubyracer (~> 0.10.1)
 
+GIT
+  remote: https://github.com/hughkelsey/jquery-mobile-rails.git
+  revision: 87284c8b0df82b98c42368b623885b8a9cb61fea
+  specs:
+    jquery_mobile_rails (1.1.0)
+      rails (>= 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -77,8 +84,6 @@ GEM
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
-    jquery_mobile_rails (1.1.0)
-      rails (>= 3.1.0)
     json (1.7.0)
     less (2.2.1)
       commonjs (~> 0.2.6)
@@ -168,7 +173,7 @@ DEPENDENCIES
   bcrypt-ruby
   coffee-rails (~> 3.2.1)
   jquery-rails
-  jquery_mobile_rails
+  jquery_mobile_rails!
   linecache19!
   mobile-fu!
   pg

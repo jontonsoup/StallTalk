@@ -45,9 +45,7 @@ class StalltalkiansController < ApplicationController
   # POST /stalltalkians.json
   def create
     params[:stalltalkian][:password] = Stalltalkian.hash_password(params[:stalltalkian][:password])
-    debugger
     @stalltalkian = Stalltalkian.new(params[:stalltalkian])
-    debugger
     respond_to do |format|
       if @stalltalkian.save
         format.html { redirect_to @stalltalkian, notice: 'Stalltalkian was successfully created.' }
