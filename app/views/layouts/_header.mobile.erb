@@ -1,0 +1,11 @@
+<% url = request.path%>
+<% if url != root_path %>
+<%= link_to "Back", "#", :"data-icon" => "back", :"id" => "layouts-header-back-button", :"data-rel" => "back", :"data-direction" => "reverse", :"data-iconpos" => "right" %>
+<% end %>
+    <h1>
+        <%= @header.nil? ? "StallTalk" : @header %>
+    </h1>
+
+<% if url != root_path %>
+<%= link_to "Home", root_url, :"data-icon" => :home, :"id" => "layouts-header-home-button", :"data-direction" => "reverse" %>
+<% end %>

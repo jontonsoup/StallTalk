@@ -9,6 +9,7 @@ gem 'pg'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'mobile-fu', :git => 'git://github.com/benlangfeld/mobile-fu.git'
 gem 'thin'
+gem 'jquery_mobile_rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
