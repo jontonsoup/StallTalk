@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>StallTalk!</title>
-    <%= stylesheet_link_tag    "mobile/application", :media => "all" %>
-    <%= javascript_include_tag "mobile/application" %>
-    <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0," />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>StallTalk!</title>
+  <%= stylesheet_link_tag    "mobile/application", :media => "all" %>
+  <%= javascript_include_tag "mobile/application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0," />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
 <body>
  <div data-role="page" id="layouts-page">
-    <div data-role="header" data-position="fixed">
-      <%= render 'layouts/header' %>
+  <div data-role="header" data-position="fixed">
+    <%= render 'layouts/header' %>
   </div>
   <div data-role="content">
-      <%= yield %>
+    <%= yield %>
   </div>
   <div data-role="footer" id="layouts-footer" class="ui-bar" data-type="horizontal">
-          <h1><a href="mailto:vladimirpoopin@stalltalk.info" data-role="button" data-mini="true" style="display: block">Contact Us!</a></h1>
+    <% unless request.fullpath == '/posts' %>
+    <h1><%= link_to "See All Posts", posts_path, "data-role" => "button", "data-mini" => "true", "style" => "display: block" %></h1>
+    <% end %>
+    <h1><a href="mailto:vladimirpoopin@stalltalk.info" data-role="button" data-mini="true" style="display: block">Contact Us!</a></h1>
   </div>
 </div>
 
