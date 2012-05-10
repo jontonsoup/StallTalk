@@ -15,6 +15,8 @@ class PoopstationsController < ApplicationController
   # GET /poopstations/1.json
   def show
     @poopstation = Poopstation.find_or_create_by_id(params[:id])
+    session[:poopstation_id] = Poopstation.find_by_id(@poopstation.id).id
+    @post = Post.new
 
     respond_to do |format|
       format.html # show.html.erb

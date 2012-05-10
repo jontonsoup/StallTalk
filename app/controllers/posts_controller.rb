@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
-    @post = Post.new
+    @post = self.current_poopstation.post.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,12 +43,14 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    current_poopstation_id = session[:poopstation_id]
+    current_poopstation = Poopstation.find_by_id(current_poopstation_id)
+    @post = current_poopstation.posts.new(params[:post])
 
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.mobile { redirect_to @post, notice: 'Post was successfully created.' }
+        format.mobile { redirect_to poopstation_url(current_poopstation), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
