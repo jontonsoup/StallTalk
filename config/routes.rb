@@ -9,6 +9,9 @@ Stalltalk::Application.routes.draw do
 
   resources :poopstations
 
+  #match '/:id' => 'poopstation#show', :constraints => {:id => /\?s=/}
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
