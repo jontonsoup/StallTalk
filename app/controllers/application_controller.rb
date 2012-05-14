@@ -3,8 +3,9 @@ class ApplicationController < ActionController::Base
   has_mobile_fu
 
   before_filter :set_request_format
-    def set_request_format
-    request.format = :mobile if is_mobile_device?
+  def set_request_format
+    if is_mobile_device?
+        request.format = :mobile
     end
-
+end
 end

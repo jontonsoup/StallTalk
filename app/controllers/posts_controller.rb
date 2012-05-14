@@ -46,10 +46,9 @@ class PostsController < ApplicationController
     current_poopstation_id = session[:poopstation_id]
     current_poopstation = Poopstation.find_by_id(current_poopstation_id)
     @post = current_poopstation.posts.new(params[:post])
-
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to poopstation_url(current_poopstation), notice: 'Post was successfully created.' }
         format.mobile { redirect_to poopstation_url(current_poopstation), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else

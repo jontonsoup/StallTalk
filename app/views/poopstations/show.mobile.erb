@@ -9,9 +9,6 @@
         <%= post.text %>
     </a>
     <div class = "ui-li-count"><%= post.likes %></div>
-    <%# form_tag(poopstations_path, :method => "post") do %>
-    <%# submit_tag("Search",  "data-icon" => "star")%>
-    <%#end %>
     <%= link_to "Like", '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s, "data-icon" => "star", :method => "post" %>
 </li>
 
