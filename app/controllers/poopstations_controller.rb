@@ -28,17 +28,17 @@ class PoopstationsController < ApplicationController
 def like
 
   @poopstation = Poopstation.find(params[:poopstation])
-
-  @post = Post.find(params[:id])
-  @post.likes = @post.likes + 1
-  @post.save
+  if request.post?
+    @post = Post.find(params[:id])
+    @post.likes = @post.likes + 1
+    @post.save
+  end
 
   respond_to do |format|
     format.html { redirect_to @poopstation }
     format.json { redirect_to @poopstation }
     format.mobile { redirect_to @poopstation }
   end
-
 end
 
 
