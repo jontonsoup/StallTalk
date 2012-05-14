@@ -24,6 +24,23 @@ class PoopstationsController < ApplicationController
       format.mobile
     end
   end
+#like
+def like
+
+  @poopstation = Poopstation.find(params[:poopstation])
+
+  @post = Post.find(params[:id])
+  @post.likes = @post.likes + 1
+  @post.save
+
+  respond_to do |format|
+    format.html { redirect_to @poopstation }
+    format.json { redirect_to @poopstation }
+    format.mobile { redirect_to @poopstation }
+  end
+
+end
+
 
   # GET /poopstations/new
   # GET /poopstations/new.json

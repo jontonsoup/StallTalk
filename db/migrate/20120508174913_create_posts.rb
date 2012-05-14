@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :poopstation_id
       t.integer :stalltalkian_id
       t.integer :location_id
+      t.integer :likes, :default => 0
 
       t.timestamps
     end

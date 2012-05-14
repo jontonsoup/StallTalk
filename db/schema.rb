@@ -41,8 +41,9 @@ ActiveRecord::Schema.define(:version => 20120508174913) do
     t.integer  "poopstation_id"
     t.integer  "stalltalkian_id"
     t.integer  "location_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "likes",           :default => 0
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "stalltalkians", :force => true do |t|

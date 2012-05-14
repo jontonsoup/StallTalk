@@ -9,6 +9,7 @@ Stalltalk::Application.routes.draw do
 
   resources :poopstations
 
+  match '/poopstations/:poopstation/:id' => 'poopstations#like'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
