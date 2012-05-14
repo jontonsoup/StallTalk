@@ -30,7 +30,7 @@ def like
   @poopstation = Poopstation.find(params[:poopstation])
   if request.post?
     @post = Post.find(params[:id])
-    @post.likes = @post.likes + 1
+    @post.likes = @post.likes.to_int + 1
     @post.save
   end
 
