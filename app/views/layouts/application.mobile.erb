@@ -29,18 +29,18 @@
       <li>
         <a href="" ><%= flash[:error] %></a>
       </li>
-      <ul>
-      </div>
-      <% end %>
-      <%= yield %>
-    </div>
-    <div data-role="footer" id="layouts-footer" class="ui-bar" data-type="horizontal">
-      <% unless request.fullpath == '/posts' %>
-      <h1><%= link_to "See All Posts", posts_path, "data-role" => "button", "data-mini" => "true", "style" => "display: block" %></h1>
-      <% end %>
-      <h1><a href="mailto:vladimirpoopin@stalltalk.info" data-role="button" data-mini="true" style="display: block">Contact Us!</a></h1>
-    </div>
+    </ul>
   </div>
+  <% end %>
+  <%= yield %>
+</div>
+<div data-role="footer" id="layouts-footer" class="ui-bar" data-type="horizontal">
+  <% unless request.fullpath == '/posts' %>
+  <h1><%= link_to "See All Posts", posts_path, "data-role" => "button", "data-mini" => "true", "style" => "display: block" %></h1>
+  <% end %>
+  <h1><a href="mailto:vladimirpoopin@stalltalk.info" data-role="button" data-mini="true" style="display: block">Contact Us!</a></h1>
+</div>
+</div>
 
 </body>
 </html>
