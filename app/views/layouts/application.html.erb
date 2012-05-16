@@ -7,14 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/header' %>
-  <% if flash[:notice] %>
-    <div class="alert alert-success"><%= flash[:notice] %></div>
-  <% end %>
+  <%# If we are generating QR codes, make the page blank%>
+  <% if @stickers.nil? %>
+  <div class="container">
+    <%= render 'layouts/header' %>
+    <% if flash[:notice] %>
+    <br><br><br>
+    <div class="alert alert-success alert-block"><%= flash[:notice] %></div>
+    <% end %>
     <% if flash[:error] %>
-    <div class="notice alert-error"><%= flash[:error] %></div>
-  <% end %>
-<%= yield %>
-
+    <br><br><br>
+    <div class="alert alert-block alert-error"><%= flash[:error] %></div>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
 </body>
+<% else %>
+  <%= yield %>
+<% end %>
 </html>

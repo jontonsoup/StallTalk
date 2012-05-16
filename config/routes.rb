@@ -11,6 +11,8 @@ Stalltalk::Application.routes.draw do
 
   match '/poopstations/:poopstation/:id' => 'poopstations#like'
 
+  match '/stickers' => 'home#generate_stickers'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -5,7 +5,7 @@ class CreatePoopstations < ActiveRecord::Migration
       t.string :gender
       t.integer :stalltalkian_id
       t.integer :location_id
-
+      t.boolean :printed
       t.timestamps
     end
   end

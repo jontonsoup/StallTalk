@@ -1,0 +1,28 @@
+      <div class="hero-unit">
+        <br>
+        <% if @start.nil? %>
+        <h2> Let's Print Some Stickers!</h2>
+        <h3>Starting sticker id :<h3>
+          <br>
+          <%= form_tag(stickers_path, :method => "post") do %>
+          <%= text_field_tag(:number_of_stickers_start) %>
+          <h3>Ending sticker id :<h3>
+            <br>
+            <%= text_field_tag(:number_of_stickers_end) %>
+            <br>
+            <%= submit_tag("Generate Fun", :class => "btn btn-primary btn-large") %>
+            <% end %>
+            <% end %>
+
+            <% if not @start.nil? %>
+            <% @start.to_i.upto(@end.to_i) do |i|%>
+            Sticker id: <%= (i) %>
+            <img src="https://chart.googleapis.com/chart?cht=qr&chs=400x400&chld=H&chl=http://www.stalltalk.info/poopstations/<%= i %>">
+            <br>
+            <br>
+            <% end %>
+            <% end %>
+          </div>
+
+
+
