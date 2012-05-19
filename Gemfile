@@ -11,6 +11,7 @@ gem 'mobile-fu', :git => 'git://github.com/benlangfeld/mobile-fu.git'
 gem 'thin'
 gem 'jquery_mobile_rails', :git => 'https://github.com/hughkelsey/jquery-mobile-rails.git'
 gem 'bcrypt-ruby'
+gem 'newrelic_rpm'
 
 # Gems used only for assets and not required
 # in production environments by default.
