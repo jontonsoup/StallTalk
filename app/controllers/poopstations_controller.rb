@@ -94,7 +94,7 @@ end
       if @poopstation.locations.create(:name => params[:location], :city => params[:city], :state => params[:state])
         format.html { redirect_to @poopstation, notice: 'Spanks!' }
         format.json { head :no_content }
-        format.mobile { redirect_to @poopstation }
+        format.mobile { redirect_to @poopstation, notice: 'Spanks!' }
       else
         format.html { render action: "edit" }
         format.mobile { render action: "edit" }
