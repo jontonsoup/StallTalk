@@ -1,12 +1,12 @@
 Stalltalk::Application.routes.draw do
   resources :posts
 
-   root :to => 'home#index'
+  root :to => 'home#index'
 
   resources :stalltalkians
 
   resources :locations
-
+  match '/poopstations/:id/admin' => 'poopstations#admin'
   resources :poopstations
 
   match '/poopstations/:poopstation/:id' => 'poopstations#like'
@@ -15,6 +15,8 @@ Stalltalk::Application.routes.draw do
   match '/stickers' => 'home#generate_stickers'
 
   match '/best/' => 'posts#bestposts'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

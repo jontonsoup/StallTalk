@@ -3,7 +3,6 @@ class PoopstationsController < ApplicationController
   # GET /poopstations.json
   def index
     @poopstations = Poopstation.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @poopstations }
@@ -92,8 +91,8 @@ end
     @poopstation = Poopstation.find(params[:id])
 
     respond_to do |format|
-      if @poopstation.update_attributes(params[:poopstation])
-        format.html { redirect_to @poopstation, notice: 'Poopstation was successfully updated.' }
+      if @poopstation.locations.create(:name => params[:location], :city => params[:city], :state => params[:state])
+        format.html { redirect_to @poopstation, notice: 'Spanks!' }
         format.json { head :no_content }
         format.mobile { redirect_to @poopstation }
       else
@@ -103,6 +102,15 @@ end
       end
     end
   end
+  def admin
+   @poopstation = Poopstation.find(params[:id])
+
+   respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @poopstation }
+      format.mobile
+  end
+end
 
   # DELETE /poopstations/1
   # DELETE /poopstations/1.json

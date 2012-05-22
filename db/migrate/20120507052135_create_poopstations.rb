@@ -4,7 +4,6 @@ class CreatePoopstations < ActiveRecord::Migration
       t.string :sticker_type
       t.string :gender
       t.integer :stalltalkian_id
-      t.integer :location_id
       t.boolean :printed
       t.timestamps
     end

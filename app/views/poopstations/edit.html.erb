@@ -1,4 +1,24 @@
-<%- model_class = @poopstation.class -%>
-<h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
-                                 :default => "Edit #{model_class.model_name.human}") %></h1>
-<%= render :partial => 'form' %>
+<h1>Poop and Tell!</h1>
+
+<br>
+
+<%= form_tag(poopstation_path, :method => "PUT") do %>
+<%= text_field_tag(:location, nil , :placeholder => "Location") %>
+<%= text_field_tag(:city, nil , :placeholder => "City") %>
+<%= text_field_tag(:state, nil , :placeholder => "State") %>
+<div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>Gender:</legend>
+        <input type="radio" name="gender" id="radio-choice-1" value="male" checked="checked" />
+        <label for="radio-choice-1">Male</label>
+
+        <input type="radio" name="gender" id="radio-choice-2" value="female"  />
+        <label for="radio-choice-2">Female</label>
+
+    </fieldset>
+</div>
+<%= submit_tag("Update") %>
+</fieldset>
+</div>
+<% end %>
+<br>
