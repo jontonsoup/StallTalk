@@ -30,15 +30,10 @@ def like
   @poopstation = Poopstation.find(params[:poopstation])
 
   if request.post?
-    if session[:like_count].nil?
-      session[:like_count] = 0
-    end
-    if  session[:like_count] < 3
-      session[:like_count] = session[:like_count] + 1
       @post = Post.find(params[:id])
+      session[@post.id] = true
       @post.likes = @post.likes.to_int + 1
       @post.save
-    end
   end
 
   respond_to do |format|

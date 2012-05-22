@@ -52,9 +52,9 @@ class PostsController < ApplicationController
         format.mobile { redirect_to poopstation_url(current_poopstation), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
-        format.html { render action: "new" }
-        format.mobile { render action: "new" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+           format.html { redirect_to poopstation_url(current_poopstation), notice: 'Shit hit the fan!' }
+        format.mobile { redirect_to poopstation_url(current_poopstation), notice: 'Shit hit the fan!' }
+        format.json { render json: @post, status: :created, location: @post }
       end
     end
   end
