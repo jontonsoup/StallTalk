@@ -23,6 +23,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def bestposts
+    @posts = Post.find(:all, :order => "likes desc")
+
+
+     respond_to do |format|
+      format.html # new.html.erb
+      format.mobile
+      format.json { render json: @post }
+    end
+  end
+
   # GET /posts/new
   # GET /posts/new.json
   def new

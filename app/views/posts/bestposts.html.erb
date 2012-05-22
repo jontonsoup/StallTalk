@@ -1,0 +1,27 @@
+    <h2>Best Posts</h2>
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <hr>
+        <th>
+          Shits
+        </td>
+        <th>
+          Likes
+        </td>
+      </hr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.text %></td>
+        <td><span class="badge badge-info"><%= post.likes %></span></td>
+        <% if session[post.id] != true %>
+        <td><%= link_to "Bump" , '/poopstations' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s, "data-icon" => "star", :method => "post" %></td>
+        <% else %>
+        <td><%= link_to "" , '/poopstations' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s , "data-icon" => "star", :method => "post" %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>

@@ -30,17 +30,24 @@ def like
   @poopstation = Poopstation.find(params[:poopstation])
 
   if request.post?
-      @post = Post.find(params[:id])
-      session[@post.id] = true
-      @post.likes = @post.likes.to_int + 1
-      @post.save
+
+    @post = Post.find(params[:id])
+    session[@post.id] = true
+    @post.likes = @post.likes.to_int + 1
+    @post.save
   end
 
   respond_to do |format|
+   if params[:best].nil?
     format.html { redirect_to @poopstation }
     format.json { redirect_to @poopstation }
     format.mobile { redirect_to @poopstation }
+  else
+    format.html { redirect_to best_path }
+    format.json { redirect_to best_path }
+    format.mobile { redirect_to best_path }
   end
+end
 end
 
 

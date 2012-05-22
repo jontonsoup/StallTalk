@@ -1,0 +1,16 @@
+    <h2>Best Posts</h2>
+    <br>
+    <hr>
+    <ul data-role="listview">
+       <% @posts.each do |post| %>
+       <li data-icon="false">
+        <a href="" >
+            <%= post.text %>
+        </a>
+        <% if session[post.id] != true %>
+        <%= link_to "" , '/poopstations/' + "best/" + post.poopstation.id.to_s + '/' + post.id.to_s , "data-icon" => "star", :method => "post" %>
+        <% end %>
+        <div class = "ui-li-count"><%= post.likes %></div>
+    </li>
+    <% end %>
+</ul>
