@@ -26,7 +26,6 @@ class PostsController < ApplicationController
   def bestposts
     @posts = Post.find(:all, :order => "likes desc")
 
-
      respond_to do |format|
       format.html # new.html.erb
       format.mobile
