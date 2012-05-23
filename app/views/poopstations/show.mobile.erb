@@ -4,18 +4,22 @@
 <hr>
 <br>
 <ul data-role="listview">
-  <% @poopstation.posts.each do |post|%>
-  <li data-icon="false">
-    <a href="" >
-        <%= post.text %>
-    </a>
-    <div class = "ui-li-count"><%= post.likes %></div>
-    <% if session[post.id] != true %>
-    <%= link_to "Like", '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s, "data-icon" => "star", :method => "post" %>
+    <% if @poopstation.posts.empty? %>
+    <li data-icon="false"> Looks like there are no posts. Be the first to leave your mark!</li>
     <% end %>
-</li>
 
-<% end %>
+    <% @poopstation.posts.each do |post|%>
+    <li data-icon="false">
+        <a href="" >
+            <%= post.text %>
+        </a>
+        <div class = "ui-li-count"><%= post.likes %></div>
+        <% if session[post.id] != true %>
+        <%= link_to "Like", '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s, "data-icon" => "star", :method => "post" %>
+        <% end %>
+    </li>
+
+    <% end %>
 </ul>
 <br>
 
