@@ -1,5 +1,6 @@
     <h2>Best Posts</h2>
     <br>
+    <%= link_to "Checkout Latest Posts!" , posts_path , "data-role" => "button" %>
     <hr>
     <ul data-role="listview">
        <% @posts.each do |post| %>
