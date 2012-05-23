@@ -2,12 +2,13 @@
     <br>
     <br>
     <h2>Best Posts</h2>
-      <%= link_to "Checkout Latest Posts" , posts_path, "class" => "btn" %>
+    <br>
+      <%= link_to "Checkout Latest Posts!" , posts_path, "class" => "btn" %>
     <table class="table table-striped">
       <thead>
         <hr>
         <th>
-          Shits
+          Posts
         </td>
         <th>
           Likes
@@ -18,7 +19,6 @@
       <% @posts.each do |post| %>
       <tr>
         <td><%= post.text %></td>
-        <td><span class="badge badge-info"><%= post.likes %></span></td>
         <% if session[post.id] != true %>
         <td><%= link_to "Bump" , '/poopstations' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s, "data-icon" => "star", :method => "post" %></td>
         <% else %>
