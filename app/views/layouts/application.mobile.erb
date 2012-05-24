@@ -38,7 +38,9 @@
   <% unless request.fullpath == '/posts' %>
   <h1><%= link_to "See All Posts", best_path, "data-role" => "button", "data-mini" => "true", "style" => "display: block" %></h1>
   <% end %>
+  <% if request.fullpath == '/'  %>
   <h1><a href="mailto:vladimirpoopin@stalltalk.info" data-role="button" data-mini="true" style="display: block">Contact Us!</a></h1>
+  <% end %>
 </div>
 </div>
 
