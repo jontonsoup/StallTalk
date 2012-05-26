@@ -10,12 +10,12 @@
 
     <% @poopstation.posts.each do |post|%>
     <li data-icon="false">
-        <a href="" >
+        <a>
             <%= post.text %>
         </a>
         <div class = "ui-li-count"><%= post.likes %></div>
         <% if session[post.id] != true %>
-        <%= link_to "Like", '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s, "data-icon" => "star", :method => "post" %>
+        <%= link_to "Like", '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s + '/', "data-icon" => "star", :method => "post" %>
         <% end %>
     </li>
 
