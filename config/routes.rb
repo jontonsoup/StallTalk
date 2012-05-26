@@ -6,9 +6,9 @@ Stalltalk::Application.routes.draw do
   resources :stalltalkians
 
   resources :locations
-  match '/poopstations/:id/admin' => 'poopstations#admin'
-  resources :poopstations
 
+  resources :poopstations
+  match '/poopstations/:id/admin' => 'poopstations#admin'
   match '/poopstations/:poopstation/:id' => 'poopstations#like'
   match '/poopstations/:best/:poopstation/:id' => 'poopstations#like'
 
