@@ -15,8 +15,8 @@
         </a>
         <div class = "ui-li-count"><%= post.likes %></div>
         <% if session[post.id] != true %>
-        <a href="<%= '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s + '/' %>">
-        <%= link_to "Like", '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s + '/', "data-icon" => "star", :method => "post" %></a>
+        <a  data-ajax="false" href="<%= '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s + '/' %>">
+        <%= link_to "Like", '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s + '/', "data-icon" => "star", :method => "post" , "data-ajax" =>" false"%></a>
         <% end %>
     </li>
 
