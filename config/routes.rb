@@ -8,6 +8,7 @@ Stalltalk::Application.routes.draw do
   resources :locations
 
   resources :poopstations
+  match '/poopstations/:id' => 'post#create', :via => :post
   match '/poopstations/:id/admin' => 'poopstations#admin'
   match '/poopstations/:poopstation/:id' => 'poopstations#like'
   match '/poopstations/:best/:poopstation/:id' => 'poopstations#like'
