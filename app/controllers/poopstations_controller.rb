@@ -28,13 +28,11 @@ def like
 
   @poopstation = Poopstation.find(params[:poopstation])
 
-  if request.post?
 
     @post = Post.find(params[:id])
     session[@post.id] = true
     @post.likes = @post.likes.to_int + 1
     @post.save
-  end
 
   respond_to do |format|
    if params[:best].nil?
