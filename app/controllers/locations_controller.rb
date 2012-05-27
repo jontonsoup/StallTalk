@@ -79,9 +79,6 @@ class LocationsController < ApplicationController
   # DELETE /locations/1
   # DELETE /locations/1.json
   def destroy
-    @location = Location.find(params[:id])
-    @location.destroy
-
     respond_to do |format|
       format.html { redirect_to locations_url }
       format.mobile { redirect_to locations_url }

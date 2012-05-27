@@ -80,8 +80,6 @@ class StalltalkiansController < ApplicationController
   # DELETE /stalltalkians/1
   # DELETE /stalltalkians/1.json
   def destroy
-    @stalltalkian = Stalltalkian.find(params[:id])
-    @stalltalkian.destroy
 
     respond_to do |format|
       format.html { redirect_to stalltalkians_url }

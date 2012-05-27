@@ -113,8 +113,6 @@ end
   # DELETE /poopstations/1
   # DELETE /poopstations/1.json
   def destroy
-    @poopstation = Poopstation.find(params[:id])
-    @poopstation.destroy
 
     respond_to do |format|
       format.html { redirect_to poopstations_url }
