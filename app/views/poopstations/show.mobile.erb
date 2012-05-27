@@ -13,7 +13,7 @@
     <% if session[post.id] != true %>
     <li data-icon="star">
 
-        <%= link_to post.text, '/poopstations/' + @poopstation.id.to_s + '/' + post.id.to_s + '/', "data-icon" => "star", :method => "post", "data-iconpos" => "right" %>
+        <%= link_to post.text, '/like/' + @poopstation.id.to_s + '/' + post.id.to_s + '/', "data-icon" => "star", :method => "post", "data-iconpos" => "right" %>
         <%# post.text %>
 
         <div class = "ui-li-count"><%= post.likes %></div>
