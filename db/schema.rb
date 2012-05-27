@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20120522181200) do
   end
 
   create_table "posts", :force => true do |t|
-    t.string   "text"
+    t.text     "text"
     t.integer  "poopstation_id"
     t.integer  "stalltalkian_id"
     t.integer  "location_id"
