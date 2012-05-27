@@ -11,6 +11,9 @@
           Posts
         </td>
         <th>
+
+        </td>
+        <th>
           Likes
         </td>
       </hr>
@@ -20,9 +23,11 @@
       <tr>
         <td><%= post.text %></td>
         <% if session[post.id] != true %>
-        <td><%= link_to "Bump" , '/poopstations' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s, "data-icon" => "star", :method => "post" %></td>
+        <td><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s, "data-icon" => "star", :method => "post" %></td>
+         <td><span class="badge badge-info"><%= post.likes %></span></td>
         <% else %>
-        <td><%= link_to "" , '/poopstations' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s , "data-icon" => "star", :method => "post" %></td>
+        <td><%= link_to "" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s , "data-icon" => "star", :method => "post" %></td>
+         <td><span class="badge badge-info"><%= post.likes %></span></td>
         <% end %>
       </tr>
       <% end %>
