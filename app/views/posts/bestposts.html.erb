@@ -23,10 +23,10 @@
       <tr>
         <td><%= post.text %></td>
         <% if session[post.id] != true %>
-        <td><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s, "data-icon" => "star", :method => "post" %></td>
+        <td><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s %></td>
          <td><span class="badge badge-info"><%= post.likes %></span></td>
         <% else %>
-        <td><%= link_to "" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s , "data-icon" => "star", :method => "post" %></td>
+        <td><a></a></td>
          <td><span class="badge badge-info"><%= post.likes %></span></td>
         <% end %>
       </tr>
