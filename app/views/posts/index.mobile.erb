@@ -1,8 +1,20 @@
    <h2>From Around The Shitosphere</h2>
    <br>
+   <%= link_to "Checkout Best Posts!" , best_path , "data-role" => "button" %>
    <hr>
-   <ul data-role="listview">
+   <br>
+    <ul data-role="listview">
      <% @posts.each do |post| %>
-     <li> <%= post.text %> </li>
-     <% end %>
-   </ul>
+     <% if session[post.id] != true %>
+     <li data-icon="star">
+        <%= link_to post.text, '/like/best/' + post.poopstation.id.to_s + '/' + post.id.to_s + '/', "data-icon" => "star", "data-iconpos" => "right" %>
+        <div class = "ui-li-count"><%= post.likes %></div>
+    </li>
+    <% else %>
+    <li data-icon="false">
+        <a><%= post.text %></a>
+        <div class = "ui-li-count"><%= post.likes %></div>
+    </li>
+    <% end %>
+    <% end %>
+</ul>

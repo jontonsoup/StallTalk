@@ -29,10 +29,10 @@ def like
   @poopstation = Poopstation.find(params[:poopstation])
 
 
-    @post = Post.find(params[:id])
-    session[@post.id] = true
-    @post.likes = @post.likes.to_int + 1
-    @post.save
+  @post = Post.find(params[:id])
+  session[@post.id] = true
+  @post.likes = @post.likes.to_int + 1
+  @post.save
 
   respond_to do |format|
    if params[:best].nil?
@@ -40,9 +40,9 @@ def like
     format.json { redirect_to @poopstation }
     format.mobile { redirect_to @poopstation }
   else
-    format.html { redirect_to best_path }
-    format.json { redirect_to best_path }
-    format.mobile { redirect_to best_path }
+    format.html { redirect_to posts_path }
+    format.json { redirect_to posts_path }
+    format.mobile { redirect_to posts_path }
   end
 end
 end
@@ -107,8 +107,8 @@ end
       format.html # show.html.erb
       format.json { render json: @poopstation }
       format.mobile
+    end
   end
-end
 
   # DELETE /poopstations/1
   # DELETE /poopstations/1.json

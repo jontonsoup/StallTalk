@@ -1,19 +1,36 @@
 <%- model_class = Post.new.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Posts</th>
-      <th>Likes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
+<br><br><br><br>
+<h1>Latest Posts</h1>
+<br>
+<%= link_to "Checkout Best Posts!" , best_path, "class" => "btn" %>
+<br>
+    <table class="table table-striped">
+      <thead>
+        <hr>
+        <th>
+          Posts
+        </td>
+        <th>
+
+        </td>
+        <th>
+          Likes
+        </td>
+      </hr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
       <tr>
         <td><%= post.text %></td>
+        <% if session[post.id] != true %>
+        <td><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s %></td>
          <td><span class="badge badge-info"><%= post.likes %></span></td>
+        <% else %>
+        <td><a></a></td>
+         <td><span class="badge badge-info"><%= post.likes %></span></td>
+        <% end %>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
 
