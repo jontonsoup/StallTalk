@@ -2,8 +2,9 @@
         <h1>Start The Movement!</h1>
         <br>
         <p>StallTalk is a toilet based social network founded by Northwestern Computer Science students and avid toilet users. It allows toileteers to anonymously leave messages at a particular stall. Talking to people is simple. Each stall has a unique QR code that links to a webpage that displays posts at that stall. Users simply scan the code, and -- 'Plop!' -- the rest is history.</p>
-        <p><%= link_to "Get Stickers".html_safe, stickers_path, :class => "btn  btn-large"%></p>
-        <p><%= link_to "Support us on IndieGoGo!".html_safe, "http://www.indiegogo.com/stalltalk", :class => "btn btn-large btn-primary"%></p>
+        <%= link_to "Get Stickers".html_safe, stickers_path, :class => "btn  btn-large"%>
+        <%= link_to "Support us on IndieGoGo!".html_safe, "http://www.indiegogo.com/stalltalk", :class => "btn btn-large btn-primary"%>
+
 
       </div>
 
@@ -20,10 +21,10 @@
         </div>
       </div>
       <hr>
-       <div class="row">
+      <div class="row">
         <h2 class="offset4 span4">Our Mobile Application</h2>
-       </div>
-       <br>
+      </div>
+      <br>
       <div class="row">
         <%= image_tag "stall.png", :class => "thumbnail span3 offset1" %>
         <%= image_tag "all.png", :class => "thumbnail span3 offset3" %>
