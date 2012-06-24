@@ -9,8 +9,9 @@ class HomeController < ApplicationController
     end
     def generate_stickers
         begin
+           @count = Stickercount.find_or_create_by_id(1)
             if params["wants_stickers"]["butt_really"] == "true"
-                @start = Stickercount.find_or_create_by_id(1)
+                @start = @count
                 @start.count = @start.count + 25
                 @start.save!
             end

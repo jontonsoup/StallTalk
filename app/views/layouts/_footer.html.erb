@@ -1,4 +1,5 @@
       <hr>
       <footer>
-        <p>&copy; StallTalk 1857 | <a href="mailto:vladamirpoopin@stalltalk.info">Contact Us!</a></p>
+        <% @count = Stickercount.find_or_create_by_id(1) %>
+        <p>&copy; StallTalk 1857 | <%= @count.count %> Stickers Served | <a href="mailto:vladamirpoopin@stalltalk.info">Contact Us!</a></p>
     </footer>
