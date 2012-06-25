@@ -10,7 +10,7 @@
         <% end %>
 
         <% if not @start.nil? %>
-        <% start = @start.count.to_i - 24 %>
+        <% start = @start.count.to_i - 4 %>
         <% start.to_i.upto(@start.count.to_i) do |i|%>
         Sticker id: <%= (i) %>
         <img src="https://chart.googleapis.com/chart?cht=qr&chs=400x400&chld=H&chl=http://www.stalltalk.info/poopstations/<%= i %>">
