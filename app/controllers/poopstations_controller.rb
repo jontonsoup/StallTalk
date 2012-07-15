@@ -16,7 +16,7 @@ class PoopstationsController < ApplicationController
     @poopstation = Poopstation.find_or_create_by_id(params[:id])
     session[:poopstation_id] = Poopstation.find_by_id(@poopstation.id).id
     @post = Post.new
-    @posts = Post.find(:all, :order => "id desc", :limit => 15)
+    @posts = Post.find(:all, :order => "id desc", :limit => 20)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @poopstation }
