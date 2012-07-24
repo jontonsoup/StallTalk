@@ -1,0 +1,43 @@
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      <div class="hero-unit">
+        <h1>Start The Movement!</h1>
+        <br>
+        <p>StallTalk is a toilet based social network founded by Northwestern Computer Science students and avid toilet users. It allows toileteers to anonymously leave messages at a particular stall. Talking to people is simple. Each stall has a unique QR code that links to a webpage that displays posts at that stall. Users simply scan the code, and -- 'Plop!' -- the rest is history.</p>
+        <%= link_to "Get Stickers".html_safe, stickers_path, :class => "btn  btn-large"%>
+        <%= link_to "Support us on IndieGoGo!".html_safe, "http://www.indiegogo.com/stalltalk", :class => "btn btn-large btn-primary"%>
+        <%= link_to "Checkout our Video!".html_safe, "http://www.youtube.com/watch?v=mn3aoNhy12M", :class => "btn btn-large"%>
+        <br>
+        <br>
+        <br>
+    <div class="fb-like" data-href="http://www.stalltalk.info" data-send="true" data-width="450" data-show-faces="true"></div>
+
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>Our Team</h2>
+          <p>The StallTalk team consists of a team of Northwestern Computer Science students dedicated to living life to the fullest. Our team has a combined 25 years of programming experience, 3 successful companies, and are toilet experts.</p>
+        </div>
+        <div class="span4 offset4">
+          <h2>Our Dream</h2>
+          <p>We have a dream that one day every toilet around the world will be a beacon of hope. Whether it be through chat or games-- we hope to revolutionize the way people poop.</p>
+          <p> <%= link_to "See all posts".html_safe, posts_path, :class => "btn btn-primary btn-large"%></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <h2 class="offset4 span4">Our Mobile Application</h2>
+      </div>
+      <br>
+      <div class="row">
+        <%= image_tag "stall.png", :class => "thumbnail span3 offset1" %>
+        <%= image_tag "all.png", :class => "thumbnail span3 offset3" %>
+      </div>

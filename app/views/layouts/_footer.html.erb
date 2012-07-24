@@ -1,5 +1,13 @@
-      <hr>
-      <footer>
-        <% @count = Stickercount.find_or_create_by_id(1) %>
-        <p>&copy; StallTalk 1857 | <%= @count.count %> Stickers Served | <a href="mailto:vladamirpoopin@stalltalk.info">Contact Us!</a></p>
-    </footer>
+<% if request.fullpath != '/stickers' %>
+<div class="footer-spread">
+	<p class="credits">Design by <a href="http://www.will-wallace.com">wallace</a></p>
+
+	<div class="blocker">
+
+	</div>
+	<footer class="foot">
+		<% @count = Stickercount.find_or_create_by_id(1) %>
+		<span> &copy; StallTalk 1857 | <%= @count.count %> Stickers Served | <a href="mailto:vladamirpoopin@stalltalk.info">Contact Us!</a></span>
+	</footer>
+</div>
+<% end %>

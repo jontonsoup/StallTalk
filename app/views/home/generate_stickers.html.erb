@@ -1,24 +1,24 @@
       <div class="hero-unit">
         <br>
-        <% if @start.nil? %>
-        <h2> Let's Print Some Stickers! <%= @count.count %> have already been printed worldwide!</h2>
-        <br>
-        <%= form_tag(stickers_path, :method => "post") do %>
-        <%= hidden_field(:wants_stickers, :butt_really, :value => "true") %>
-        <%= submit_tag("Generate Fun", :class => "btn btn-primary btn-large") %>
-        <% end %>
-        <% end %>
+            <% if @start.nil? %>
+            <h2> Let's Print Some Stickers! <%= @count.count %> have already been printed worldwide!</h2>
+            <br>
+            <%= form_tag(stickers_path, :method => "post") do %>
+            <%= hidden_field(:wants_stickers, :butt_really, :value => "true") %>
+            <%= submit_tag("Generate Fun", :class => "btn btn-primary btn-large") %>
+            <% end %>
+            <% end %>
 
-        <% if not @start.nil? %>
-        <% start = @start.count.to_i - 4 %>
-        <% start.to_i.upto(@start.count.to_i) do |i|%>
-        Sticker id: <%= (i) %>
-        <img src="https://chart.googleapis.com/chart?cht=qr&chs=400x400&chld=H&chl=http://www.stalltalk.info/poopstations/<%= i %>">
-        <br>
-        <br>
-        <% end %>
-        <% end %>
-      </div>
+            <% if not @start.nil? %>
+            <% start = @start.count.to_i - 4 %>
+            <% start.to_i.upto(@start.count.to_i) do |i|%>
+            Sticker id: <%= (i) %>
+            <img src="https://chart.googleapis.com/chart?cht=qr&chs=400x400&chld=H&chl=http://www.stalltalk.info/poopstations/<%= i %>">
+            <br>
+            <br>
+            <% end %>
+            <% end %>
+    </div>
 
 
 
