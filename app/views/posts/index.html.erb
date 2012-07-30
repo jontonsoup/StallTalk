@@ -19,14 +19,14 @@
     </thead>
     <tbody>
       <% @posts.each do |post| %>
-      <tr style="background-color: #FFF"><tr>
-        <td><%= post.text %></td>
+      <tr ><tr>
+        <td style="background-color: #FFF"><%= post.text %></td>
         <% if session[post.id] != true %>
-        <td><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s %></td>
-         <td><span class="badge badge-info"><%= post.likes %></span></td>
+        <td style="background-color: #FFF"><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s %></td>
+         <td style="background-color: #FFF"><span class="badge badge-info"><%= post.likes %></span></td>
         <% else %>
         <td><a></a></td>
-         <td><span class="badge badge-info"><%= post.likes %></span></td>
+         <td style="background-color: #FFF"> <span class="badge badge-info"><%= post.likes %></span></td>
         <% end %>
       </tr>
       <% end %>
