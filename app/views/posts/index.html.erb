@@ -19,7 +19,7 @@
     </thead>
     <tbody>
       <% @posts.each do |post| %>
-      <tr>
+      <tr style="background-color: #FFF"><tr>
         <td><%= post.text %></td>
         <% if session[post.id] != true %>
         <td><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s %></td>
