@@ -1,35 +1,36 @@
 <%- model_class = Post.new.class -%>
 <br><br><br><br>
-<h1>Latest Posts</h1>
-<br>
-<%= link_to "Checkout Best Posts!" , best_path, "class" => "btn" %>
-    <table class="table table-striped">
-      <thead>
-        <hr>
-        <th>
-          Posts
-        </td>
-        <th>
+<div class="about">
+  <h1>Latest Posts</h1>
+  <br>
+  <%= link_to "Checkout Best Posts!" , best_path, "class" => "btn" %>
+  <table class="table table-striped">
+    <thead>
+      <hr>
+      <th>
+        Posts
+      </td>
+      <th>
 
-        </td>
-        <th>
-          Likes
-        </td>
-      </hr>
-    </thead>
-    <tbody>
-      <% @posts.each do |post| %>
-      <tr ><tr>
-        <td style="background-color: #FFF"><%= post.text %></td>
-        <% if session[post.id] != true %>
-        <td style="background-color: #FFF"><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s %></td>
-         <td style="background-color: #FFF"><span class="badge badge-info"><%= post.likes %></span></td>
-        <% else %>
-        <td><a></a></td>
-         <td style="background-color: #FFF"> <span class="badge badge-info"><%= post.likes %></span></td>
-        <% end %>
-      </tr>
+      </td>
+      <th>
+        Likes
+      </td>
+    </hr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr ><tr>
+      <td style="background-color: #FFF"><%= post.text %></td>
+      <% if session[post.id] != true %>
+      <td style="background-color: #FFF"><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s %></td>
+      <td style="background-color: #FFF"><span class="badge badge-info"><%= post.likes %></span></td>
+      <% else %>
+      <td><a></a></td>
+      <td style="background-color: #FFF"> <span class="badge badge-info"><%= post.likes %></span></td>
       <% end %>
-    </tbody>
-  </table>
-
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

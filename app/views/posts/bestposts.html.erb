@@ -1,35 +1,37 @@
     <br>
     <br>
     <br>
-    <h2>Best Posts</h2>
-    <br>
+    <div class="well">
+      <h2>Best Posts</h2>
+      <br>
       <%= link_to "Checkout Latest Posts!" , posts_path, "class" => "btn" %>
-    <table class="table table-striped">
-      <thead>
-        <hr>
-        <th>
-          Posts
-        </td>
-        <th>
+      <table class="table table-striped">
+        <thead>
+          <hr>
+          <th>
+            Posts
+          </td>
+          <th>
 
-        </td>
-        <th>
-          Likes
-        </td>
-      </hr>
-    </thead>
-    <tbody>
-      <% @posts.each do |post| %>
-      <tr style="background-color: #FFF">
-        <td style="background-color: #FFF"><%= post.text %></td>
-        <% if session[post.id] != true %>
-        <td style="background-color: #FFF"><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s %></td>
-         <td style="background-color: #FFF"><span class="badge badge-info"><%= post.likes %></span></td>
-        <% else %>
-        <td style="background-color: #FFF"><a></a></td>
-         <td style="background-color: #FFF"><span class="badge badge-info"><%= post.likes %></span></td>
+          </td>
+          <th>
+            Likes
+          </td>
+        </hr>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+        <tr style="background-color: #FFF">
+          <td style="background-color: #FFF"><%= post.text %></td>
+          <% if session[post.id] != true %>
+          <td style="background-color: #FFF"><%= link_to "Bump" , '/like' + "/best/" + post.poopstation.id.to_s + '/' + post.id.to_s %></td>
+          <td style="background-color: #FFF"><span class="badge badge-info"><%= post.likes %></span></td>
+          <% else %>
+          <td style="background-color: #FFF"><a></a></td>
+          <td style="background-color: #FFF"><span class="badge badge-info"><%= post.likes %></span></td>
+          <% end %>
+        </tr>
         <% end %>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>

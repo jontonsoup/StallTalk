@@ -1,6 +1,8 @@
+<% if request.fullpath == '/' %>
 <div class="head-spread">
   <%= image_tag "logo.jpg", :class => "pull-right", :style => "position:fixed; top: 0px;left: 80%;z-index: 99999"%>
 </div>
+<% end %>
 
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
@@ -22,6 +24,6 @@
     </div>
   </div>
 </div>
- <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
+<% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %></div>
+<% end %>
