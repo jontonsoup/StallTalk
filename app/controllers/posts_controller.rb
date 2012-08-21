@@ -55,9 +55,10 @@ class PostsController < ApplicationController
   def create
     current_poopstation_id = session[:poopstation_id]
     current_poopstation = Poopstation.find_by_id(current_poopstation_id)
-    @post = current_poopstation.posts.new(params[:post])
+    #@post = current_poopstation.posts.new(params[:post])
     respond_to do |format|
       if @post.save
+        UserMailer.post_email(@post).deliver
         format.html { redirect_to poopstation_url(current_poopstation), notice: 'Thnx for pooping! Come Again.' }
         format.mobile { redirect_to poopstation_url(current_poopstation), notice: 'Thnx for pooping! Come Again.' }
         format.json { render json: @post, status: :created, location: @post }
