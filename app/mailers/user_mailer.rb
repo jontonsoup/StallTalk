@@ -1,8 +1,10 @@
 class UserMailer < ActionMailer::Base
-	include Resque::Mailer
 	default from: "from@example.com"
-
-	def post_email(post)
+	include Resque::Mailer
+	def post_email(id)
+		debugger
+		p = Post.find_by_id(id)
+		@text = p.text
 		mail(:to => "friedmanj98@gmail.com", :subject => "Someone Posted")
 	end
 end
