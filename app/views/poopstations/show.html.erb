@@ -1,23 +1,25 @@
 <br>
-<table class="table table-striped">
-  <thead>
-    <hr>
-    <th>
-      Shits
-    </td>
-    <th>
-      Likes
-    </td>
-  </hr>
-</thead>
+<div class="well">
+  <table class="table table-striped">
+    <thead>
+      <hr>
+      <th>
+        Shits
+      </td>
+      <th>
+        Likes
+      </td>
+    </hr>
+  </thead>
 
 
-<tbody>
- <% @poopstation.posts.each do |post|%>
- <tr>
-  <td><%= post.text %></td>
-  <td><span class="badge badge-info"><%= post.likes %></span></td>
-</tr>
-<% end %>
+  <tbody>
+   <% @poopstation.posts.each do |post|%>
+   <tr>
+    <td><%= post.text %></td>
+    <td><span class="badge badge-info"><%= post.likes %></span></td>
+  </tr>
+  <% end %>
 </tbody>
 </table>
+</div>

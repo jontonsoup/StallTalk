@@ -1,33 +1,33 @@
 <br>
 <br>
 <br>
-Posts
-<table class="table table-striped">
-  <thead>
-    <th>Text</th>
-    <th>Likes</th>
-  </thead>
-  <% @poopstation.posts.each do |post|%>
-  <tr>
-    <td><%= post.text %></td>
-    <td><span class="badge badge-info"><%= post.likes %></span></td>
-
-  </tr>
-  <% end %>
-  Location
+<div class = "well">
   <table class="table table-striped">
     <thead>
-      <th>Location</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Category</th>
+      <th>Text</th>
+      <th>Likes</th>
     </thead>
-    <% @poopstation.locations.each do |location|%>
+    <% @poopstation.posts.each do |post|%>
     <tr>
-      <td><%= location.name %></td>
-      <td><%= location.city %></td>
-      <td><%= location.state %></td>
-      <td><%= location.category %></td>
+      <td><%= post.text %></td>
+      <td><span class="badge badge-info"><%= post.likes %></span></td>
+
     </tr>
     <% end %>
-  </table>
+    <table class="table table-striped">
+      <thead>
+        <th>Location</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Category</th>
+      </thead>
+      <% @poopstation.locations.each do |location|%>
+      <tr>
+        <td><%= location.name %></td>
+        <td><%= location.city %></td>
+        <td><%= location.state %></td>
+        <td><%= location.category %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
