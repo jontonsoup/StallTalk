@@ -15,7 +15,7 @@ gem 'bcrypt-ruby'
 gem 'newrelic_rpm'
 gem 'redis'
 gem 'resque_mailer'
-gem 'resque', :require => "resque/server"
+gem 'resque'
 gem 'hirefire'
 
 e# Gems used only for assets and not required
