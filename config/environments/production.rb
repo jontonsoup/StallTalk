@@ -70,9 +70,10 @@ Stalltalk::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => 'stalltalk.info',
-    :user_name            => 'vladamirpoopin',
+    :domain               => 'projectstagecoach.com',
+    :user_name            => 'vladamirpoopin@stalltalk.info',
     :password             => 'cosmochase',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
-end
+
+  end
