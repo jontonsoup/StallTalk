@@ -35,6 +35,9 @@ config.active_record.auto_explain_threshold_in_seconds = 0.5
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  ENV["REDISTOGO_URL"] = 'redis://username:password@my.host:6789'
+
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
