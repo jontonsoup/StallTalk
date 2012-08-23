@@ -13,11 +13,12 @@ gem 'thin'
 gem 'jquery_mobile_rails', :git => 'https://github.com/hughkelsey/jquery-mobile-rails.git'
 gem 'bcrypt-ruby'
 gem 'newrelic_rpm'
+gem 'redis'
 gem 'resque_mailer'
 gem 'resque', :require => "resque/server"
 gem 'hirefire'
 
-# Gems used only for assets and not required
+e# Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
