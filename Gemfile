@@ -15,6 +15,7 @@ gem 'bcrypt-ruby'
 gem 'newrelic_rpm'
 gem 'resque_mailer'
 gem 'resque', :require => "resque/server"
+gem 'hirefire'
 
 # Gems used only for assets and not required
 # in production environments by default.
