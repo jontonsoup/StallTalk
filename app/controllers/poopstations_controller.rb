@@ -15,6 +15,10 @@ class PoopstationsController < ApplicationController
   def show
     @poopstation = Poopstation.find_or_create_by_id(params[:id])
     session[:poopstation_id] = Poopstation.find_by_id(@poopstation.id).id
+    admin = Stalltalkian.find_by_email("friedmanj98@gmail.com")
+    unless @poopstation.stalltalkians.include? admin
+        @poopstation.stalltalkians << admin
+    end
     @post = Post.new
     @posts = Post.find(:all, :order => "id desc", :limit => 20)
     respond_to do |format|

@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   def bestposts
     @posts = Post.find(:all, :order => "likes desc")
 
-     respond_to do |format|
+    respond_to do |format|
       format.html # new.html.erb
       format.mobile
       format.json { render json: @post }
@@ -59,17 +59,19 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         @texts = @post.text
-        UserMailer.post_email(@texts).deliver
+        current_poopstation.stalltalkians.each do |stalltalkian|
+          UserMailer.post_email(@texts, stalltalkian.email, current_poopstation_id, @post.created_at).deliver
+        end
         format.html { redirect_to poopstation_url(current_poopstation), notice: 'Thnx for pooping! Come Again.' }
         format.mobile { redirect_to poopstation_url(current_poopstation), notice: 'Thnx for pooping! Come Again.' }
         format.json { render json: @post, status: :created, location: @post }
       else
-           format.html { redirect_to poopstation_url(current_poopstation), notice: 'Shit hit the fan!' }
-        format.mobile { redirect_to poopstation_url(current_poopstation), notice: 'Shit hit the fan!' }
-        format.json { render json: @post, status: :created, location: @post }
-      end
-    end
-  end
+       format.html { redirect_to poopstation_url(current_poopstation), notice: 'Shit hit the fan!' }
+       format.mobile { redirect_to poopstation_url(current_poopstation), notice: 'Shit hit the fan!' }
+       format.json { render json: @post, status: :created, location: @post }
+     end
+   end
+ end
 
   # PUT /posts/1
   # PUT /posts/1.json

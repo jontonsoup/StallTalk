@@ -4,15 +4,15 @@
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 </head>
 <body>
-  <h1>Welcome to example.com, </h1>
+  <h1>New Post!</h1>
 
   <p>
-    <%= @text %>
-    your username is: hi <br/>
+Someone has posted on stall: <%= @id %> at <%= @time %>
+<br>
+<br>
+Text:
+<%= @text %>
   </p>
-  <p>
-    To login to the site, just follow this link: .
-  </p>
-  <p>Thanks for joining and have a great day!</p>
+  <p>View the admin for the stall at <a href="www.stalltalk.info/poopstations/<%= @id %>">the website</a></p>
 </body>
 </html>

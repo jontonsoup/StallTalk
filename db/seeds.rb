@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'bcrypt'
+
+me = Stalltalkian.find_or_create_by_email(:name => "jon", :email => "friedmanj98@gmail.com", :password => BCrypt::Password.create("stall"))
+

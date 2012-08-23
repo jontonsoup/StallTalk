@@ -16,7 +16,7 @@ class StalltalkiansController < ApplicationController
   # GET /stalltalkians/1.json
   def show
     @stalltalkian = Stalltalkian.find(params[:id])
-
+    @poopstations = @stalltalkian.poopstations
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @stalltalkian }
