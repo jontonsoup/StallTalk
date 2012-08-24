@@ -14,9 +14,8 @@ gem 'jquery_mobile_rails', :git => 'https://github.com/hughkelsey/jquery-mobile-
 gem 'bcrypt-ruby'
 gem 'newrelic_rpm'
 gem 'redis'
-gem 'resque_mailer'
 gem 'resque'
-gem 'hirefire'
+gem 'resque_mailer'
 
 e# Gems used only for assets and not required
 # in production environments by default.
