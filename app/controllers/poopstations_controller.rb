@@ -17,7 +17,7 @@ class PoopstationsController < ApplicationController
     session[:poopstation_id] = Poopstation.find_by_id(@poopstation.id).id
     admin = Stalltalkian.find_by_email("friedmanj98@gmail.com")
     unless @poopstation.stalltalkians.include? admin
-        @poopstation.stalltalkians << admin
+      @poopstation.stalltalkians << admin
     end
     @post = Post.new
     @posts = Post.find(:all, :order => "id desc", :limit => 20)
@@ -27,6 +27,18 @@ class PoopstationsController < ApplicationController
       format.mobile
     end
   end
+
+#splashscreen
+
+def splashscreen
+  @poopstation = params[:id]
+  respond_to do |format|
+   format.html
+   format.json { render json: @poopstations }
+   format.mobile
+ end
+end
+
 #like
 def like
 

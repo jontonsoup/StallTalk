@@ -2,7 +2,7 @@
 <% if url != root_path %>
 <%= link_to "Back", "#", :"data-icon" => "back", :"id" => "layouts-header-back-button", :"data-rel" => "back", :"data-direction" => "reverse", :"data-iconpos" => "right" %>
 <% end %>
-    <h1>
+    <h1 style="font-family: 'Lobster', cursive; font-size: 16pt;">
         <%= @header.nil? ? "StallTalk" : @header %>
     </h1>
 

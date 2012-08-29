@@ -11,6 +11,7 @@ Stalltalk::Application.routes.draw do
   match '/poopstations/:id/admin' => 'poopstations#admin'
   match '/like/:poopstation/:id' => 'poopstations#like'
   match '/like/:best/:poopstation/:id' => 'poopstations#like'
+  match '/poopstations/:id/dash' => 'poopstations#splashscreen'
 
   match '/stickers' => 'home#generate_stickers'
 
