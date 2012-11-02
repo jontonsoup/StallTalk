@@ -1,0 +1,27 @@
+<h1>Listing checkins</h1>
+
+<table>
+  <tr>
+    <th>Poopstations</th>
+    <th>Summary</th>
+    <th>Stalltalkian</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @checkins.each do |checkin| %>
+  <tr>
+    <td><%= checkin.poopstations_id %></td>
+    <td><%= checkin.summary %></td>
+    <td><%= checkin.stalltalkian_id %></td>
+    <td><%= link_to 'Show', checkin %></td>
+    <td><%= link_to 'Edit', edit_checkin_path(checkin) %></td>
+    <td><%= link_to 'Destroy', checkin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Checkin', new_checkin_path %>

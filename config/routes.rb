@@ -1,4 +1,8 @@
 Stalltalk::Application.routes.draw do
+  resources :statuses
+
+  resources :checkins
+
   resources :posts
 
   root :to => 'home#index'
@@ -9,6 +13,7 @@ Stalltalk::Application.routes.draw do
 
   resources :poopstations
   match '/poopstations/:id/admin' => 'poopstations#admin'
+  match '/stalls/:id/admin' => 'poopstations#admin'
   match '/like/:poopstation/:id' => 'poopstations#like'
   match '/like/:best/:poopstation/:id' => 'poopstations#like'
   match '/poopstations/:id/dash' => 'poopstations#splashscreen'

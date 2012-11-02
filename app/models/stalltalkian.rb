@@ -3,6 +3,7 @@ class Stalltalkian < ActiveRecord::Base
     include BCrypt
 
     has_many :posts
+    has_many :checkins
     has_and_belongs_to_many :poopstations
     attr_accessible :email, :name, :password
 

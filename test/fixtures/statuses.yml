@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  checkin_id: 1
+  bathroomobjects_id: 1
+  status: MyString
+
+two:
+  checkin_id: 1
+  bathroomobjects_id: 1
+  status: MyString

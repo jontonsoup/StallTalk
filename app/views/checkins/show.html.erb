@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Poopstations:</b>
+  <%= @checkin.poopstations_id %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @checkin.summary %>
+</p>
+
+<p>
+  <b>Stalltalkian:</b>
+  <%= @checkin.stalltalkian_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_checkin_path(@checkin) %> |
+<%= link_to 'Back', checkins_path %>

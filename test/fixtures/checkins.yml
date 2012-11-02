@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  poopstations_id: 1
+  summary: MyString
+  stalltalkian_id: 1
+
+two:
+  poopstations_id: 1
+  summary: MyString
+  stalltalkian_id: 1

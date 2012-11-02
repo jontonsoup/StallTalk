@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120522181200) do
+ActiveRecord::Schema.define(:version => 20121102191958) do
+
+  create_table "bathroomobjects", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "checkins", :force => true do |t|
+    t.integer  "poopstation_id"
+    t.string   "summary"
+    t.integer  "stalltalkian_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "locations", :force => true do |t|
     t.string   "name"
@@ -57,6 +71,14 @@ ActiveRecord::Schema.define(:version => 20120522181200) do
     t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.integer  "checkin_id"
+    t.integer  "bathroomobjects_id"
+    t.string   "status"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "stickercounts", :force => true do |t|
