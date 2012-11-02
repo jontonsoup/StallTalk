@@ -16,8 +16,9 @@ gem 'newrelic_rpm'
 gem 'redis'
 gem 'resque'
 gem 'resque_mailer'
+gem 'devise'
 
-e# Gems used only for assets and not required
+# Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails'

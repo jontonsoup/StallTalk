@@ -1,4 +1,6 @@
 Stalltalk::Application.routes.draw do
+  devise_for :stalltalkians
+
   resources :statuses
 
   resources :checkins

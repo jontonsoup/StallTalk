@@ -35,6 +35,8 @@ config.active_record.auto_explain_threshold_in_seconds = 0.5
   # Expands the lines which load the assets
   config.assets.debug = true
 
+   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
   ENV["REDISTOGO_URL"] ||= 'redis://redistogo:399438b16bcc825d9eb9e774a3fc4b00@char.redistogo.com:9036/'
 
 
