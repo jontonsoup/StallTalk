@@ -1,6 +1,6 @@
 <h1>Listing checkins</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Poopstations</th>
     <th>Summary</th>
@@ -12,7 +12,7 @@
 
 <% @checkins.each do |checkin| %>
   <tr>
-    <td><%= checkin.poopstations_id %></td>
+    <td><%= checkin.poopstation_id %></td>
     <td><%= checkin.summary %></td>
     <td><%= checkin.stalltalkian_id %></td>
     <td><%= link_to 'Show', checkin %></td>
