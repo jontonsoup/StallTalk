@@ -56,7 +56,7 @@ Stalltalk::Application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
-  config.i18n.fallbacks = true
+config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
@@ -64,6 +64,7 @@ Stalltalk::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.action_mailer.default_url_options = { :host => 'stalltalk.herokuapp.com' }
 
   ENV["REDISTOGO_URL"] = 'redis://redistogo:399438b16bcc825d9eb9e774a3fc4b00@char.redistogo.com:9036/'
 
@@ -77,4 +78,12 @@ Stalltalk::Application.configure do
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
-  end
+    ActionMailer::Base.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => 'projectstagecoach.com',
+      :user_name            => 'vladamirpoopin@stalltalk.info',
+      :password             => 'cosmochase',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true  }
+    end

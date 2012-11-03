@@ -19,6 +19,9 @@
           <li><a href="/stickers">Stickers</a></li>
           <li><a href="/posts">Posts</a></li>
           <li><a href="/#about">About</a></li>
+          <% if stalltalkian_signed_in?%>
+          <li> <%= link_to "Sign out", destroy_stalltalkian_session_path %> </li>
+          <% end %>
         </ul>
       </div>
     </div>

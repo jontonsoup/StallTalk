@@ -14,7 +14,7 @@ Stalltalk::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -35,13 +35,11 @@ config.active_record.auto_explain_threshold_in_seconds = 0.5
   # Expands the lines which load the assets
   config.assets.debug = true
 
-   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
   ENV["REDISTOGO_URL"] ||= 'redis://redistogo:399438b16bcc825d9eb9e774a3fc4b00@char.redistogo.com:9036/'
 
-
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
+  ActionMailer::Base.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'projectstagecoach.com',
@@ -49,5 +47,13 @@ config.active_record.auto_explain_threshold_in_seconds = 0.5
     :password             => 'cosmochase',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => 'projectstagecoach.com',
+      :user_name            => 'vladamirpoopin@stalltalk.info',
+      :password             => 'cosmochase',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true  }
 
-  end
+    end

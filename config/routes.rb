@@ -14,6 +14,8 @@ Stalltalk::Application.routes.draw do
   resources :locations
 
   resources :poopstations
+
+  match '/logout' => 'user_sessions#destroy'
   match '/poopstations/:id/admin' => 'poopstations#admin'
   match '/stalls/:id/admin' => 'poopstations#admin'
   match '/like/:poopstation/:id' => 'poopstations#like'

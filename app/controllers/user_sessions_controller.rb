@@ -17,8 +17,8 @@ class UserSessionsController < ApplicationController
 	end
 
 	def destroy
-		current_user_session.destroy
+		current_stalltalkian_session.destroy
 		flash[:notice] = "Logout successful!"
-		redirect_back_or_default new_user_session_url
+		redirect_back_or_default new_stalltalkian_session_url
 	end
 end
