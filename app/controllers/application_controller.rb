@@ -9,4 +9,7 @@ class ApplicationController < ActionController::Base
 			request.format = :mobile
 		end
 	end
+	def current_ability
+  		@current_ability ||= Ability.new(current_stalltalkian)
+	end
 end

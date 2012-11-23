@@ -17,6 +17,7 @@ gem 'redis'
 gem 'resque'
 gem 'resque_mailer'
 gem 'devise'
+gem 'cancan'
 
 # Gems used only for assets and not required
 # in production environments by default.
