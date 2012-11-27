@@ -1,5 +1,6 @@
 require 'bcrypt'
 class Stalltalkian < ActiveRecord::Base
+  ROLES = %w[manager servicer]
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -13,7 +14,7 @@ class Stalltalkian < ActiveRecord::Base
     has_many :posts
     has_many :checkins
     has_and_belongs_to_many :poopstations
-    attr_accessible :email, :name, :password
+    attr_accessible :email, :name, :password, :role
 
     public
     def self.hash_password(new_password)

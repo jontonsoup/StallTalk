@@ -1,4 +1,10 @@
 <div class="hero-unit">
+   <% if flash[:notice] %>
+    <div style="margin-top: -100px;" class="alert alert-success alert-block"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:error] %>
+    <div style="margin-top: -100px;" class="alert alert-block alert-error"><%= flash[:error] %></div>
+    <% end %>
   <div class="wrapper">
     <h1 class="pull-left span9">Start The Movement.</h1>
     <p class="span4 pull-right">

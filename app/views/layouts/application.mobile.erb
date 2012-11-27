@@ -14,7 +14,11 @@
 </head>
 <body>
   <% url = request.path%>
-  <div data-role="page" id="layouts-page" data-url="<%= url %>">
+  <% if url == "/stalltalkians/sign_in" %>
+    <div data-role="page" id="layouts-page" data-url="/>">
+  <% else %>
+    <div data-role="page" id="layouts-page" data-url="<%= url %>">
+  <% end %>
   <div data-role="header" data-position="fixed">
     <%= render 'layouts/header' %>
   </div>
@@ -39,12 +43,7 @@
   <% end %>
   <%= yield %>
 </div>
-<div data-role="footer" id="layouts-footer" class="ui-bar" data-type="horizontal">
-  <% unless request.fullpath == '/posts' %>
-  <h1><%= link_to "See All Posts", posts_path, "data-role" => "button", "data-mini" => "true", "style" => "display: block" %></h1>
-  <% end %>
-  <h1><a href="mailto:mailto:vladamirpoopin@stalltalk.info" data-role="button" data-mini="true" style="display: block">Suggestions?</a></h1>
-</div>
+<%= render "layouts/footer" %>
 </div>
 
 </body>

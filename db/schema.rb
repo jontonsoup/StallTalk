@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102215345) do
+ActiveRecord::Schema.define(:version => 20121123212128) do
 
   create_table "bathroomobjects", :force => true do |t|
     t.string   "name"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20121102215345) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "authentication_token"
+    t.string   "role"
   end
 
   add_index "stalltalkians", ["authentication_token"], :name => "index_stalltalkians_on_authentication_token", :unique => true

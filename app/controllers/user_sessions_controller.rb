@@ -8,6 +8,7 @@ class UserSessionsController < ApplicationController
 
 	def create
 		@user_session = UserSession.new(params[:user_session])
+		@url = account_url
 		if @user_session.save
 			flash[:notice] = "Login successful!"
 			redirect_back_or_default account_url
@@ -20,5 +21,6 @@ class UserSessionsController < ApplicationController
 		current_stalltalkian_session.destroy
 		flash[:notice] = "Logout successful!"
 		redirect_back_or_default new_stalltalkian_session_url
+		end
 	end
 end

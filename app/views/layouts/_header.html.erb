@@ -21,6 +21,8 @@
           <li><a href="/#about">About</a></li>
           <% if stalltalkian_signed_in?%>
           <li> <%= link_to "Sign Out", destroy_stalltalkian_session_path %> </li>
+          <% else %>
+           <li> <%= link_to "Sign In", "stalltalkians/sign_in" %> </li>
           <% end %>
         </ul>
       </div>

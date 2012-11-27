@@ -1,6 +1,7 @@
 class CheckinsController < ApplicationController
   # GET /checkins
   # GET /checkins.json
+  before_filter :authenticate_stalltalkian!
   def index
     @checkins = Checkin.all
 

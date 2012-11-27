@@ -9,7 +9,9 @@
         <th><%= model_class.human_attribute_name(:name) %></th>
         <th><%= model_class.human_attribute_name(:email) %></th>
         <th><%= model_class.human_attribute_name(:created_at) %></th>
-        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+        <% if ((can? :edit, @stalltalkian) || (can? :delete, @stalltalkian)) %>
+           <th><%=t '.actions', :default => t("helpers.actions") %></th>
+        <% end %>
       </tr>
     </thead>
     <tbody>
@@ -19,16 +21,22 @@
         <td><%= stalltalkian.name %></td>
         <td><%= stalltalkian.email %></td>
         <td><%=l stalltalkian.created_at %></td>
+        <% if can? :edit, @stalltalkian %>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
           edit_stalltalkian_path(stalltalkian), :class => 'btn btn-mini' %>
         </td>
+        <% end %>
+        <% if can? :delete, @stalltalkian %>
+        <td><%= link_to 'Destroy', stalltalkian, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini' %></td>
+        <% end %>
       </tr>
       <% end %>
     </tbody>
   </table>
-
+  <% if can? :create, @stalltalkian %>
   <%= link_to t('.new', :default => t("helpers.links.new")),
   new_stalltalkian_path,
   :class => 'btn btn-primary' %>
+  <% end %>
 </div>

@@ -1,0 +1,12 @@
+<div data-role="footer" id="layouts-footer" class="ui-bar" data-type="horizontal">
+
+	<% unless request.fullpath == '/posts' %>
+	<h1><%= link_to "See All Posts", posts_path, "data-role" => "button", "data-mini" => "true", "style" => "display: block" %></h1>
+	<% end %>
+	<h1><a href="mailto:mailto:vladamirpoopin@stalltalk.info" data-role="button" data-mini="true" style="display: block">Suggestions?</a></h1>
+	<% if stalltalkian_signed_in?%>
+		<h1><%= link_to "Sign Out", destroy_stalltalkian_session_path, "data-role" => "button", "data-mini" => "true", "style" => "display: block", :"data-url"=>"/" %></h1>
+	<% else %>
+		<h1> <%= link_to "Sign In", "stalltalkians/sign_in", "data-role" => "button", "data-mini" => "true", "style" => "display: block"  %> </h1>
+	<% end %>
+</div>
