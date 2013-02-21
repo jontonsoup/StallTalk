@@ -32,9 +32,9 @@ end
 
 group :development do
   #comment/uncomment next 3 lines for ruby-debug
-  gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
-  gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
-  gem 'ruby-debug19'
+  # gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
+  # gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
+  # gem 'ruby-debug19'
   #
   ##### run this to get this working: bundle config build.ruby-debug-base19 --with-ruby-include=$rvm_path/src/ruby-1.9.3-p0/
   #
