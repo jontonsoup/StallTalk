@@ -22,5 +22,4 @@ class UserSessionsController < ApplicationController
 		flash[:notice] = "Logout successful!"
 		redirect_back_or_default new_stalltalkian_session_url
 		end
-	end
 end
